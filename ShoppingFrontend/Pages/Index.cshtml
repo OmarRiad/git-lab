@@ -1,0 +1,35 @@
+﻿@page
+@model ShoppingFrontendApp.Pages.IndexModel
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<h2>@Model.PageTitle</h2>
+
+@if (Model.ValidationErrors.Any())
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in Model.ValidationErrors)
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
+
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="@product.ImageUrl" alt="@product.Name" />
+                <div class="card-body">
+                    <h5 class="card-title">@product.Name</h5>
+                    <p class="card-text">$@product.Price</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,141 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  name: 'windows-agent'
+
+stages:
+ - stage: Build_Stage
+   jobs:
+   - job: Build
+     steps:
+        - task: SonarQubePrepare@5
+          inputs:
+            SonarQube: 'SonarQubeService' 
+            scannerMode: 'MSBuild'
+            projectKey: 'Azure_DevOps_Course_Azure_DevOps_Course_7a5d9c7d-1b94-4458-89a1-63fce7cc70d3'  
+            projectName: 'Shopping Frontend'
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'restore'
+            projects: '*.sln'
+            feedsToUse: 'select'
+
+        - task: DotNetCoreCLI@2
+          displayName: 'dotnet test'
+          inputs:
+            command: test
+            projects:  '*.sln'
+            arguments: ' --configuration Release --collect:"XPlat Code Coverage" '
+
+        - task: PublishCodeCoverageResults@1
+          displayName: 'Publish code coverage from $(Agent.TempDirectory)\**\coverage.cobertura.xml'
+          inputs:
+            codeCoverageTool: Cobertura
+            summaryFileLocation: '$(Agent.TempDirectory)\**\coverage.cobertura.xml'
+        - task: SonarQubeAnalyze@5
+
+        - task: SonarQubePublish@5
+          inputs:
+            pollingTimeoutSec: '300'
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'build'
+            projects:  '*.sln'
+            
+
+        - task: DotNetCoreCLI@2
+          displayName: 'dotnet publish'
+          inputs:
+            command: publish
+            arguments: '--configuration Release --output $(build.artifactstagingdirectory)'
+            zipAfterPublish: false
+
+
+        - task: CopyFiles@2
+          displayName: 'Copy Files to: $(build.artifactstagingdirectory)/ShoppingFrontend/'
+          inputs:
+            Contents: Dockerfile
+            TargetFolder: '$(build.artifactstagingdirectory)/ShoppingFrontend/'
+
+ 
+        - task: CopyFiles@2
+          displayName: 'Copy Files to: $(build.artifactstagingdirectory)ShoppingFrontend//helmchart'
+          inputs:
+            SourceFolder: HelmChart
+            TargetFolder: '$(build.artifactstagingdirectory)/ShoppingFrontend//HelmChart'
+
+        - publish: $(Build.ArtifactStagingDirectory)
+          artifact: drop
+ 
+ - stage: Deploy_to_STG
+   variables:
+   - group: frontend-stg
+   jobs:
+   - deployment: Deploy_to_STG
+     environment:
+       name: stg.stg
+     strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: replacetokens@6
+            inputs:
+              root: '$(Artifact_folder)'
+              sources: |
+                *.json
+                **/*.yaml
+          - task: Docker@2
+            inputs:
+              containerRegistry: 'acr'
+              repository: 'shoppingfrontend'
+              command: 'buildAndPush'
+              Dockerfile: '$(Artifact_folder)/Dockerfile'
+              tags: '$(image_tag)'
+          - task: HelmDeploy@0
+            displayName: 'helm upgrade'
+            inputs:
+              namespace: '$(namespace)'
+              command: upgrade
+              chartType: FilePath
+              chartPath: '$(Artifact_folder)/HelmChart'
+              releaseName: '$(release_name)'
+              overrideValues: 'image.tag=$(image_tag)'
+ - stage: Deploy_to_PROD
+   variables:
+   - group: frontend-prod
+   jobs:
+   - deployment: Deploy_to_PROD
+     environment:
+      name: prod.prod
+     strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: replacetokens@6
+            inputs:
+              root: '$(Artifact_folder)'
+              sources: |
+                *.json
+                **/*.yaml
+          - task: Docker@2
+            inputs:
+              containerRegistry: 'acr'
+              repository: 'shoppingfrontend'
+              command: 'buildAndPush'
+              Dockerfile: '$(Artifact_folder)/Dockerfile'
+              tags: '$(image_tag)'
+          - task: HelmDeploy@0
+            displayName: 'helm upgrade'
+            inputs:
+              namespace: '$(namespace)'
+              command: upgrade
+              chartType: FilePath
+              chartPath: '$(Artifact_folder)/HelmChart'
+              releaseName: '$(release_name)'
+              overrideValues: 'image.tag=$(image_tag)'

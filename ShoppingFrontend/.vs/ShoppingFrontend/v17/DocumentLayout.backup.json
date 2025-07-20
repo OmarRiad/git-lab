@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4DEA47F9-9342-4D21-B6E7-121EBC2696B7}|ShoppingFrontendApp.Tests\\ShoppingFrontendApp.Tests.csproj|c:\\users\\moelsayed\\downloads\\web-devops\\devops-project\\shoppingfrontend\\shoppingfrontendapp.tests\\shoppingfrontendapp.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4DEA47F9-9342-4D21-B6E7-121EBC2696B7}|ShoppingFrontendApp.Tests\\ShoppingFrontendApp.Tests.csproj|solutionrelative:shoppingfrontendapp.tests\\shoppingfrontendapp.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DEA47F9-9342-4D21-B6E7-121EBC2696B7}|ShoppingFrontendApp.Tests\\ShoppingFrontendApp.Tests.csproj|c:\\users\\moelsayed\\downloads\\web-devops\\devops-project\\shoppingfrontend\\shoppingfrontendapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DEA47F9-9342-4D21-B6E7-121EBC2696B7}|ShoppingFrontendApp.Tests\\ShoppingFrontendApp.Tests.csproj|solutionrelative:shoppingfrontendapp.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\obj\\Release\\net8.0\\ShoppingFrontend.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Release\\net8.0\\ShoppingFrontend.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\obj\\Release\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Release\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\ShoppingFrontendApp.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "ShoppingFrontendApp.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\ShoppingFrontendApp.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "ShoppingFrontendApp.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:16:52.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ShoppingFrontend.AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\obj\\Release\\net8.0\\ShoppingFrontend.AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "obj\\Release\\net8.0\\ShoppingFrontend.AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\obj\\Release\\net8.0\\ShoppingFrontend.AssemblyInfo.cs",
+              "RelativeToolTip": "obj\\Release\\net8.0\\ShoppingFrontend.AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:14:41.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": ".NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "DocumentMoniker": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\obj\\Release\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "RelativeDocumentMoniker": "obj\\Release\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "ToolTip": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\obj\\Release\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "RelativeToolTip": "obj\\Release\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T11:14:39.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShoppingFrontendApp.Tests",
+              "DocumentMoniker": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\ShoppingFrontendApp.Tests\\ShoppingFrontendApp.Tests.csproj",
+              "RelativeDocumentMoniker": "ShoppingFrontendApp.Tests\\ShoppingFrontendApp.Tests.csproj",
+              "ToolTip": "C:\\Users\\moelsayed\\Downloads\\web-devops\\Devops-Project\\ShoppingFrontend\\ShoppingFrontendApp.Tests\\ShoppingFrontendApp.Tests.csproj",
+              "RelativeToolTip": "ShoppingFrontendApp.Tests\\ShoppingFrontendApp.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-16T11:14:06.225Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
